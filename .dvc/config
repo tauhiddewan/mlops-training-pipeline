@@ -1,0 +1,4 @@
+[core]
+    remote = ppline
+['remote "ppline"']
+    url = s3://ml-training-pipeline
