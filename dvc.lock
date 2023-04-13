@@ -1,0 +1,37 @@
+schema: '2.0'
+stages:
+  create_dataset:
+    cmd: python create_dataset.py
+    deps:
+    - path: utils.py
+      md5: a26745a14afd9ccba3997b322afdfe25
+      size: 788
+    outs:
+    - path: assets/dataset/test.csv
+      md5: 508b751a2f71c6aedd1bac36c6116c08
+      size: 139877
+    - path: assets/dataset/train.csv
+      md5: abaaea2f722aa9379f772be2ab391741
+      size: 554199
+    - path: assets/download/dataset.csv
+      md5: ef839233b89d97f0d3229e37c4a1436c
+      size: 693946
+  create_features:
+    cmd: python create_features.py
+    deps:
+    - path: utils.py
+      md5: a26745a14afd9ccba3997b322afdfe25
+      size: 788
+    outs:
+    - path: assets/features/test_features.csv
+      md5: 8c17bfdaec33aa2e30637a47d388178f
+      size: 11211
+    - path: assets/features/test_labels.csv
+      md5: fd28bee49537e9dd086875a66ccaa39d
+      size: 5962
+    - path: assets/features/train_features.csv
+      md5: 46ecd7be142624a40d7d0809d3d6d4dd
+      size: 46430
+    - path: assets/features/train_labels.csv
+      md5: e4ff9cd5ae09a759068971f2ef9b5d65
+      size: 26064

@@ -1,0 +1,9 @@
+RANDOM_SEED : 42
+base_folder : "assets"
+download_dir : "download/dataset.csv"
+dataset_dir : "dataset"
+features_dir : "features"
+models_dir : "models"
+metrics_file : "metrics.json"
+data_url : "https://drive.google.com/uc?id=1gkYBOIMm8pAGunRoI3OzQHQrgOdaRjfC"
+
