@@ -22,5 +22,5 @@ dvc repro
 ```
 
 ## Prerequisite
-- Conda 
-- Python 3.9.0
+- Conda.
+- VSCode DVC extension.
