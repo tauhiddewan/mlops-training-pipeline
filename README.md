@@ -18,7 +18,7 @@ To reproduce, clone this repo and run the command
 conda create -n <name> python=3.9.0
 conda activate <name>
 pip install -r requirements.txt
-dvc repro
+dvc repro --pull
 ```
 
 ## Prerequisite
