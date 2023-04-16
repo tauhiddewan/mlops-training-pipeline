@@ -4,6 +4,6 @@ download_dir : "download/dataset.csv"
 dataset_dir : "dataset"
 features_dir : "features"
 models_dir : "models"
-metrics_file : "metrics.json"
+metrics_dir : "metrics"
 data_url : "https://drive.google.com/uc?id=1gkYBOIMm8pAGunRoI3OzQHQrgOdaRjfC"
 
