@@ -17,3 +17,22 @@ stages:
     - assets/features/test_features.csv
     - assets/features/train_labels.csv
     - assets/features/test_labels.csv
+
+  train:
+    cmd : python train.py
+    deps:
+    - utils.py
+    - assets/features/train_features.csv
+    - assets/features/train_labels.csv
+    outs:
+    - assets/models/model.pickle
+
+  evaluate:
+    cmd : python evaluate.py
+    deps:
+    - utils.py
+    - assets/features/test_features.csv
+    - assets/features/test_labels.csv
+    - assets/models/model.pickle
+    outs:
+    - assets/metrics/result.json
