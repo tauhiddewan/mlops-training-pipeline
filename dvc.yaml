@@ -1,32 +1,34 @@
 stages:
-  create_dataset:
-    cmd: python create_dataset.py
+  prepare:
+    cmd: python prepare.py
     deps:
     - utils.py
     outs:
     - assets/download/dataset.csv
     - assets/dataset/train.csv
     - assets/dataset/test.csv
-
-  create_features:
-    cmd: python create_features.py
+  feature_extraction:
+    cmd: python feature_extract.py
     deps:
     - utils.py
+    - assets/dataset/train.csv
+    - assets/dataset/test.csv
     outs:
     - assets/features/train_features.csv
     - assets/features/test_features.csv
     - assets/features/train_labels.csv
     - assets/features/test_labels.csv
-
   train:
     cmd : python train.py
     deps:
     - utils.py
     - assets/features/train_features.csv
     - assets/features/train_labels.csv
+    params:
+    - train.n_estimators
+    - train.max_depth
     outs:
     - assets/models/model.pickle
-    
   evaluate:
     cmd : python evaluate.py
     deps:
