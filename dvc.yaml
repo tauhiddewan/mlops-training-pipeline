@@ -26,7 +26,7 @@ stages:
     - assets/features/train_labels.csv
     outs:
     - assets/models/model.pickle
-
+    
   evaluate:
     cmd : python evaluate.py
     deps:
