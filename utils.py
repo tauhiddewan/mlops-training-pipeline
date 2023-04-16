@@ -13,6 +13,7 @@ def check_or_create_folders():
     dataset_path.mkdir(parents=True, exist_ok=True)
     features_path.mkdir(parents=True, exist_ok=True)
     models_path.mkdir(parents=True, exist_ok=True)
+    metrics_path.mkdir(parents=True, exist_ok=True)
 
 
 cfg = get_configs()
@@ -20,6 +21,6 @@ download_path = BASE_PATH /cfg["base_folder"] /cfg["download_dir"]
 dataset_path = BASE_PATH /cfg["base_folder"] /cfg["dataset_dir"]
 features_path = BASE_PATH /cfg["base_folder"] /cfg["features_dir"]
 models_path = BASE_PATH /cfg["base_folder"] /cfg["models_dir"]
+metrics_path = BASE_PATH /cfg["base_folder"] /cfg["metrics_dir"]
 
 check_or_create_folders()
-
