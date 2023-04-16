@@ -4,8 +4,8 @@ stages:
     cmd: python create_dataset.py
     deps:
     - path: utils.py
-      md5: 500e4776735a886fb604309905f75713
-      size: 904
+      md5: 1b551d31d6178704c53f2442d2720524
+      size: 903
     outs:
     - path: assets/dataset/test.csv
       md5: 508b751a2f71c6aedd1bac36c6116c08
@@ -20,8 +20,8 @@ stages:
     cmd: python create_features.py
     deps:
     - path: utils.py
-      md5: 500e4776735a886fb604309905f75713
-      size: 904
+      md5: 1b551d31d6178704c53f2442d2720524
+      size: 903
     outs:
     - path: assets/features/test_features.csv
       md5: 8c17bfdaec33aa2e30637a47d388178f
@@ -45,12 +45,12 @@ stages:
       md5: e4ff9cd5ae09a759068971f2ef9b5d65
       size: 26064
     - path: utils.py
-      md5: 500e4776735a886fb604309905f75713
-      size: 904
+      md5: 1b551d31d6178704c53f2442d2720524
+      size: 903
     outs:
     - path: assets/models/model.pickle
-      md5: 4184a011f339574b4bbd1240f62331d3
-      size: 659
+      md5: 7bcf49a6ac153c196364c2e19f09693d
+      size: 1069978
   evaluate:
     cmd: python evaluate.py
     deps:
@@ -61,12 +61,12 @@ stages:
       md5: fd28bee49537e9dd086875a66ccaa39d
       size: 5962
     - path: assets/models/model.pickle
-      md5: 4184a011f339574b4bbd1240f62331d3
-      size: 659
+      md5: 7bcf49a6ac153c196364c2e19f09693d
+      size: 1069978
     - path: utils.py
-      md5: 500e4776735a886fb604309905f75713
-      size: 904
+      md5: 1b551d31d6178704c53f2442d2720524
+      size: 903
     outs:
     - path: assets/metrics/result.json
-      md5: 97bcf82868090faaa280ed3dcafd8e47
-      size: 61
+      md5: e59795fc87fe69d08cac6de095d3b1e4
+      size: 62
