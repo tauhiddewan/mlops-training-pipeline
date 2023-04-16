@@ -1,24 +1,14 @@
 schema: '2.0'
 stages:
-  create_dataset:
-    cmd: python create_dataset.py
+  feature_extraction:
+    cmd: python feature_extract.py
     deps:
-    - path: utils.py
-      md5: 1b551d31d6178704c53f2442d2720524
-      size: 903
-    outs:
     - path: assets/dataset/test.csv
       md5: 508b751a2f71c6aedd1bac36c6116c08
       size: 139877
     - path: assets/dataset/train.csv
       md5: abaaea2f722aa9379f772be2ab391741
       size: 554199
-    - path: assets/download/dataset.csv
-      md5: ef839233b89d97f0d3229e37c4a1436c
-      size: 693946
-  create_features:
-    cmd: python create_features.py
-    deps:
     - path: utils.py
       md5: 1b551d31d6178704c53f2442d2720524
       size: 903
@@ -47,10 +37,14 @@ stages:
     - path: utils.py
       md5: 1b551d31d6178704c53f2442d2720524
       size: 903
+    params:
+      params.yaml:
+        train.max_depth: 100
+        train.n_estimators: 1000
     outs:
     - path: assets/models/model.pickle
-      md5: 7bcf49a6ac153c196364c2e19f09693d
-      size: 1069978
+      md5: 1d7cd94d3d11d328cb8a948d5efbbf39
+      size: 268006852
   evaluate:
     cmd: python evaluate.py
     deps:
@@ -61,12 +55,28 @@ stages:
       md5: fd28bee49537e9dd086875a66ccaa39d
       size: 5962
     - path: assets/models/model.pickle
-      md5: 7bcf49a6ac153c196364c2e19f09693d
-      size: 1069978
+      md5: 1d7cd94d3d11d328cb8a948d5efbbf39
+      size: 268006852
     - path: utils.py
       md5: 1b551d31d6178704c53f2442d2720524
       size: 903
     outs:
     - path: assets/metrics/result.json
-      md5: e59795fc87fe69d08cac6de095d3b1e4
-      size: 62
+      md5: 18fa1e4d96975d1831b3b06c9f7f0ca7
+      size: 60
+  prepare:
+    cmd: python prepare.py
+    deps:
+    - path: utils.py
+      md5: 1b551d31d6178704c53f2442d2720524
+      size: 903
+    outs:
+    - path: assets/dataset/test.csv
+      md5: 508b751a2f71c6aedd1bac36c6116c08
+      size: 139877
+    - path: assets/dataset/train.csv
+      md5: abaaea2f722aa9379f772be2ab391741
+      size: 554199
+    - path: assets/download/dataset.csv
+      md5: ef839233b89d97f0d3229e37c4a1436c
+      size: 693946
